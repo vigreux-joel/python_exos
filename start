@@ -1,0 +1,21 @@
+#!/bin/bash
+
+start_python_file() {
+  if [ -e "$1" ]; then
+    python3 $1
+  else
+    echo "$1 n'existe pas."
+  fi
+}
+
+echo "Choisissez votre option"
+echo "1) calculer une ip"
+echo "2) calculatrice"
+
+read n
+case $n in
+  1) start_python_file "./ip/main.py";;
+  2) start_python_file "./calculatrice/main.py";;
+  *) echo "option invalide ";;
+esac
+
